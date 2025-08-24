@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PriorityLedgerEntry",
+  "type": "object",
+  "required": [
+    "title",
+    "first_published_jst",
+    "sha256_ascii_copy"
+  ],
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "first_published_jst": {
+      "type": "string",
+      "pattern": "^\\\\d{4}-\\\\d{2}-\\\\d{2}$"
+    },
+    "source_url": {
+      "type": "string"
+    },
+    "sha256_ascii_copy": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{64}$"
+    },
+    "claim_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
