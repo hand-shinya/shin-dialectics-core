@@ -2,3 +2,5 @@ cc9c928cb1a8c0715b1cbe0515f61a0d195456aaea260b719341ef2acd24285c  docs/papers/ja
 
 582ab5968520ea8eee6b0209fdd3785cc252b1dfe1415b1d34447db77ce2e858  docs/papers/en/001-ai-augmented-dialectics-intro.en.md
 
+e07c52fdddd91eb5e2c3f9b5c604288635116a2324d86e096154cad7767549ea  docs/papers/ja_original/002-aad-practice-dimensional-thinking-20250310.md
+78c2aa7a9667db6b363c5abc36fcca96239219795dc7cc8b3d2ec6ed46a0e023  docs/papers/en/002-aad-practice-dimensional-thinking-20250310.en.md
