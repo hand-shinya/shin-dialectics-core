@@ -1,2 +1,4 @@
 cc9c928cb1a8c0715b1cbe0515f61a0d195456aaea260b719341ef2acd24285c  docs/papers/ja_original/001-ai-augmented-dialectics-intro.md
 
+582ab5968520ea8eee6b0209fdd3785cc252b1dfe1415b1d34447db77ce2e858  docs/papers/en/001-ai-augmented-dialectics-intro.en.md
+
