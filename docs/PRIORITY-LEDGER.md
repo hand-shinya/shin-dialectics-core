@@ -22,3 +22,13 @@
   "translation_of_path": "docs/papers/ja_original/001-ai-augmented-dialectics-intro.md",
   "translation_of_sha256": "cc9c928cb1a8c0715b1cbe0515f61a0d195456aaea260b719341ef2acd24285c"
 }
+
+{
+  "title": "#2「シン･弁証法」実践！ AAD：進化するプロンプトで体験する思考の次元拡張",
+  "first_published_jst": "2025-03-10",
+  "source_url": "",
+  "sha256_utf8": "e07c52fdddd91eb5e2c3f9b5c604288635116a2324d86e096154cad7767549ea",
+  "path": "docs/papers/ja_original/002-aad-practice-dimensional-thinking-20250310.md",
+  "ingested_at_jst": "（コミット時点のJSTで可）",
+  "claim_ids": []
+}
