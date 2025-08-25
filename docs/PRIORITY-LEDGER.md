@@ -32,3 +32,15 @@
   "ingested_at_jst": "（コミット時点のJSTで可）",
   "claim_ids": []
 }
+
+{
+  "title_en": "AI-Augmented Dialectics #2: Practice! AAD — Experiencing Dimensional Expansion of Thought with Evolving Prompts",
+  "variant": "translation-en",
+  "first_published_jst": "2025-03-10",
+  "translated_at_jst": "（コミット時点のJSTで可）",
+  "source_url": "",
+  "path_en": "docs/papers/en/002-aad-practice-dimensional-thinking-20250310.en.md",
+  "sha256_utf8_en": "78c2aa7a9667db6b363c5abc36fcca96239219795dc7cc8b3d2ec6ed46a0e023",
+  "translation_of_path": "docs/papers/ja_original/002-aad-practice-dimensional-thinking-20250310.md",
+  "translation_of_sha256": "e07c52fdddd91eb5e2c3f9b5c604288635116a2324d86e096154cad7767549ea"
+}
