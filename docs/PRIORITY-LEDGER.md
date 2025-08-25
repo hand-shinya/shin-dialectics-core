@@ -1,3 +1,6 @@
+# Priority Ledger (JST)
+
+```json
 {
   "title": "生成AI時代の思考法：AI拡張弁証法とは？ – 概念の誕生と可能性",
   "first_published_jst": "2025-02-12",
