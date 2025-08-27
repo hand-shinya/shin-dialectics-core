@@ -12,3 +12,6 @@ ccb5e15b3646febf73a9ef64991c6f265c0a46a2e9aa4a27e094d27fc725aa0d  docs/papers/en
 
 8b45a2a6e2a6883a83699ff3dc5fa2de2cfde2ed9d6dd7fea5bbba9fb9587529  docs/papers/ja_original/004-language-dialectics-miura-aad-20250319.md
 4cb06f7c2e2b0486f6403b801e4c269861d11045836d7357d37f72e17085ad36  docs/papers/en/004-language-dialectics-miura-aad-20250319.en.md
+
+7f3ce7cf6ad927c900e0867351265bb8e8e5a7aa59f1dee58ea9b3897cb998ca  docs/papers/ja_original/005-question-dialectics-aad-20250330.md
+e0f017fb65d5cb08dac5d9f9f22ce28a133a1a9ccdfd48f25ae6d97c8365a3cc  docs/papers/en/005-question-dialectics-aad-20250330.en.md
