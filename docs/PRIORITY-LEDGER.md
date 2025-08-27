@@ -44,3 +44,25 @@
   "translation_of_path": "docs/papers/ja_original/002-aad-practice-dimensional-thinking-20250310.md",
   "translation_of_sha256": "e07c52fdddd91eb5e2c3f9b5c604288635116a2324d86e096154cad7767549ea"
 }
+
+{
+  "title": "第3回：量子・多様体・複雑系が拓くAI拡張弁証法",
+  "first_published_jst": "2025-03-13",
+  "source_url": "",
+  "sha256_utf8": "06108153f1f03f5d1f23d5c5517ecdce32cadf937fbad33cd45ffe9a8544a580",
+  "path": "docs/papers/ja_original/003-quantum-manifold-complex-aad-20250313.md",
+  "ingested_at_jst": "（コミット時点のJSTで可）",
+  "claim_ids": []
+}
+
+{
+  "title_en": "Part 3: Quantum, Manifolds, and Complex Systems for AI-Augmented Dialectics",
+  "variant": "translation-en",
+  "first_published_jst": "2025-03-13",
+  "translated_at_jst": "（コミット時点のJSTで可）",
+  "source_url": "",
+  "path_en": "docs/papers/en/003-quantum-manifold-complex-aad-20250313.en.md",
+  "sha256_utf8_en": "811f9281cedd80f74ed5cd6a5a1ce371c2a039fffbca93f691d017c85379f4b8",
+  "translation_of_path": "docs/papers/ja_original/003-quantum-manifold-complex-aad-20250313.md",
+  "translation_of_sha256": "06108153f1f03f5d1f23d5c5517ecdce32cadf937fbad33cd45ffe9a8544a580"
+}
