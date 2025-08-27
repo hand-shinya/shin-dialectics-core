@@ -10,3 +10,5 @@ e07c52fdddd91eb5e2c3f9b5c604288635116a2324d86e096154cad7767549ea  docs/papers/ja
 811f9281cedd80f74ed5cd6a5a1ce371c2a039fffbca93f691d017c85379f4b8  docs/papers/en/003-quantum-manifold-complex-aad-20250313.en.md
 ccb5e15b3646febf73a9ef64991c6f265c0a46a2e9aa4a27e094d27fc725aa0d  docs/papers/en/003-quantum-manifold-complex-aad-20250313.appendix.en.md
 
+8b45a2a6e2a6883a83699ff3dc5fa2de2cfde2ed9d6dd7fea5bbba9fb9587529  docs/papers/ja_original/004-language-dialectics-miura-aad-20250319.md
+4cb06f7c2e2b0486f6403b801e4c269861d11045836d7357d37f72e17085ad36  docs/papers/en/004-language-dialectics-miura-aad-20250319.en.md
