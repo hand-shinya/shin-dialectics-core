@@ -87,5 +87,26 @@
   "claim_ids": []
 }
 
+{
+  "title": "第5回：問いの弁証法 – AI共考による思考要素の量質転化と次元拡張【後編：実践と実装】",
+  "first_published_jst": "2025-03-30",
+  "source_url": "",
+  "sha256_utf8": "7f3ce7cf6ad927c900e0867351265bb8e8e5a7aa59f1dee58ea9b3897cb998ca",
+  "path": "docs/papers/ja_original/005-question-dialectics-aad-20250330.md",
+  "ingested_at_jst": "2025-08-27 18:32:44 +0900",
+  "claim_ids": []
+}
+
+{
+  "title_en": "Part 5: The Dialectics of Questions — Co‑Thinking with AI for Quantitative–Qualitative Phase Transition and Dimensional Expansion [Practice & Implementation]",
+  "variant": "translation-en",
+  "first_published_jst": "2025-03-30",
+  "translated_at_jst": "2025-08-27 18:32:44 +0900",
+  "source_url": "",
+  "path_en": "docs/papers/en/005-question-dialectics-aad-20250330.en.md",
+  "sha256_utf8_en": "e0f017fb65d5cb08dac5d9f9f22ce28a133a1a9ccdfd48f25ae6d97c8365a3cc",
+  "translation_of_path": "docs/papers/ja_original/005-question-dialectics-aad-20250330.md",
+  "translation_of_sha256": "7f3ce7cf6ad927c900e0867351265bb8e8e5a7aa59f1dee58ea9b3897cb998ca"
+}
 
 
