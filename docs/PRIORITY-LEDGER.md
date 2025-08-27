@@ -77,4 +77,15 @@
   "note": "Extended appendix to maximize coverage for EN readers."
 }
 
+{
+  "title": "第4回：言語と思考の弁証法 − 三浦つとむとAI拡張弁証法の創造的統合",
+  "first_published_jst": "2025-03-19",
+  "source_url": "",
+  "sha256_utf8": "8b45a2a6e2a6883a83699ff3dc5fa2de2cfde2ed9d6dd7fea5bbba9fb9587529",
+  "path": "docs/papers/ja_original/004-language-dialectics-miura-aad-20250319.md",
+  "ingested_at_jst": "（コミット時点のJSTで可）",
+  "claim_ids": []
+}
+
+
 
