@@ -66,3 +66,15 @@
   "translation_of_path": "docs/papers/ja_original/003-quantum-manifold-complex-aad-20250313.md",
   "translation_of_sha256": "06108153f1f03f5d1f23d5c5517ecdce32cadf937fbad33cd45ffe9a8544a580"
 }
+
+{
+  "title_en": "Part 3 Appendix (Extended): Explicit Prompts, Claims, and Math–Prompt Mappings for AI-Augmented Dialectics",
+  "variant": "translation-en-extended",
+  "first_published_jst": "2025-03-13",
+  "translated_at_jst": "（コミット時点のJSTで可）",
+  "path_en": "docs/papers/en/003-quantum-manifold-complex-aad-20250313.appendix.en.md",
+  "sha256_utf8_en": "ccb5e15b3646febf73a9ef64991c6f265c0a46a2e9aa4a27e094d27fc725aa0d",
+  "note": "Extended appendix to maximize coverage for EN readers."
+}
+
+
