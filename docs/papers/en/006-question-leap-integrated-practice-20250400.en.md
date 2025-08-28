@@ -1,6 +1,6 @@
 | title | subtitle | source_url | first_published_jst | lang | version | translated_at_jst | translated_from_path |
 |---|---|---|---|---|---|---|---|
-| Part 6: The Leap of Questions and the Deepening of Co‑Thinking — An Integrated Practice of Shin‑Dialectics | With complete prompt & system message |  | 2025-04-?? | en | 1.0 | （コミット時点のJSTで可） | docs/papers/ja_original/006-question-leap-integrated-practice-20250400.md |
+| Part 6: The Leap of Questions and the Deepening of Co‑Thinking — An Integrated Practice of Shin‑Dialectics | With complete prompt & system message |  | 2025-04-18 | en | 1.0 | （コミット時点のJSTで可） | docs/papers/ja_original/006-question-leap-integrated-practice-20250400.md |
 
 # Part 6: The Leap of Questions and the Deepening of Co‑Thinking — An Integrated Practice of Shin‑Dialectics
 
