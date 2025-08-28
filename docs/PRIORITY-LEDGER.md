@@ -184,4 +184,13 @@
   "claim_ids": []
 }
 
+{
+  "title": "第9回：シン・弁証法2.0 三層統合プロンプティング理論 ― 認知変容に至る構造設計と実装戦略",
+  "first_published_jst": "2025-08-09",
+  "source_url": "",
+  "sha256_utf8": "7d18285e9b6558660f86a5d75569aaba1472daedd8cf511b6a96fbb84e25151b",
+  "path": "docs/papers/ja_original/009-aad2-three-layer-sip-20250809.md",
+  "ingested_at_jst": "（コミット時点のJSTで可）",
+  "claim_ids": []
+}
 
