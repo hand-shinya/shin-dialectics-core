@@ -194,3 +194,16 @@
   "claim_ids": []
 }
 
+{
+  "title_en": "Part 9: Shin-Dialectics 2.0 — The Three-Layer Integrated Prompting Theory — Structural Design and Implementation Strategies Toward Cognitive Transformation",
+  "variant": "translation-en",
+  "first_published_jst": "2025-08-09",
+  "translated_at_jst": "（コミット時点のJSTで可）",
+  "source_url": "",
+  "path_en": "docs/papers/en/009-aad2-three-layer-sip-20250809.en.md",
+  "sha256_utf8_en": "a0d7c4604fdd0a58762c94366e39ab8d783572943bfce2c670f9cf81395384bc",
+  "translation_of_path": "docs/papers/ja_original/009-aad2-three-layer-sip-20250809.md",
+  "translation_of_sha256": "（←HASHES.txt の JA 行からコピペ）"
+}
+
+
