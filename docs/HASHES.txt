@@ -30,3 +30,5 @@ c7c9b6a9daf51cd09a8c311c8b7d888c4d4b0b9e79a5f5d28e5f5f1b25f7a7b    docs/papers/j
 
 7d18285e9b6558660f86a5d75569aaba1472daedd8cf511b6a96fbb84e25151b  docs/papers/ja_original/009-aad2-three-layer-sip-20250809.md
 
+a0d7c4604fdd0a58762c94366e39ab8d783572943bfce2c670f9cf81395384bc    docs/papers/en/009-aad2-three-layer-sip-20250809.en.md
+aa0d82d833408e08c2587745aac93f86cdf69df242db2cbd04e0720f177e6aad    docs/core-prompts/007-integrated-master-prompt-v7.0.md
