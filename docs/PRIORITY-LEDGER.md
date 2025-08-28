@@ -131,4 +131,25 @@
   "translation_of_sha256": "7d18285e9b6558660f86a5d75569aaba1472daedd8cf511b6a96fbb84e25151b"
 }
 
+{
+  "title": "第7回：シン・弁証法2.0：実践知の弁証法的統合と「思考OS」の構築",
+  "first_published_jst": "2025-06-16",
+  "source_url": "",
+  "sha256_utf8": "c7c9b6a9daf51cd09a8c311c8b7d888c4d4b0b9e79a5f5d28e5f5f1b25f7a7b",
+  "path": "docs/papers/ja_original/007-practical-knowledge-thinking-os-20250616.md",
+  "ingested_at_jst": "（コミット時点のJSTで可）",
+  "claim_ids": []
+},
+{
+  "title_en": "Part 7: Shin-Dialectics 2.0 — The Dialectical Integration of Practical Knowledge and the Construction of a “Thinking OS”",
+  "variant": "translation-en",
+  "first_published_jst": "2025-06-16",
+  "translated_at_jst": "（コミット時点のJSTで可）",
+  "source_url": "",
+  "path_en": "docs/papers/en/007-practical-knowledge-thinking-os-20250616.en.md",
+  "sha256_utf8_en": "785d9f08cc2b61c067f31dfc4dd2a5a59644f6a3ae7f0b8a2b4d1d2e2c4634b2",
+  "translation_of_path": "docs/papers/ja_original/007-practical-knowledge-thinking-os-20250616.md",
+  "translation_of_sha256": "c7c9b6a9daf51cd09a8c311c8b7d888c4d4b0b9e79a5f5d28e5f5f1b25f7a7b"
+}
+
 
