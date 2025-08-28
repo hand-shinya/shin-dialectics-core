@@ -152,4 +152,26 @@
   "translation_of_sha256": "c7c9b6a9daf51cd09a8c311c8b7d888c4d4b0b9e79a5f5d28e5f5f1b25f7a7b"
 }
 
+{
+  "title": "第6回：問いの跳躍と共考の深化 — シン・弁証法の統合的実践",
+  "first_published_jst": "2025-04-18",
+  "source_url": "",
+  "sha256_utf8": "7d18285e9b6558660f86a5d75569aaba1472daedd8cf511b6a96fbb84e25151b",
+  "path": "docs/papers/ja_original/006-question-leap-integrated-practice-20250400.md",
+  "ingested_at_jst": "（コミット時点のJSTで可）",
+  "claim_ids": []
+}
+
+{
+  "title_en": "Part 6: The Leap of Questions and the Deepening of Co-Thinking — An Integrated Practice of Shin-Dialectics",
+  "variant": "translation-en",
+  "first_published_jst": "2025-04-18",
+  "translated_at_jst": "（コミット時点のJSTで可）",
+  "source_url": "",
+  "path_en": "docs/papers/en/006-question-leap-integrated-practice-20250400.en.md",
+  "sha256_utf8_en": "3a894cc82fd8cbc343efdecc2949e158245cd7d5f6aa4d6a9f95953537ae6714",
+  "translation_of_path": "docs/papers/ja_original/006-question-leap-integrated-practice-20250400.md",
+  "translation_of_sha256": "7d18285e9b6558660f86a5d75569aaba1472daedd8cf511b6a96fbb84e25151b"
+}
+
 
