@@ -206,4 +206,15 @@
   "translation_of_sha256": "（←HASHES.txt の JA 行からコピペ）"
 }
 
+{
+  "title_en": "Integrated Master Prompt v7.0 — Shin-Dialectics 2.0",
+  "variant": "artifact",
+  "first_published_jst": "2025-06-16",
+  "translated_at_jst": "",
+  "source_url": "",
+  "path_en": "docs/core-prompts/007-integrated-master-prompt-v7.0.md",
+  "sha256_utf8_en": "aa0d82d833408e08c2587745aac93f86cdf69df242db2cbd04e0720f177e6aad",
+  "note": "Canonical master prompt (v7.0) stored under docs/core-prompts/."
+}
+
 
