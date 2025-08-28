@@ -21,3 +21,8 @@ e0f017fb65d5cb08dac5d9f9f22ce28a133a1a9ccdfd48f25ae6d97c8365a3cc  docs/papers/en
 
 c7c9b6a9daf51cd09a8c311c8b7d888c4d4b0b9e79a5f5d28e5f5f1b25f7a7b    docs/papers/ja_original/007-practical-knowledge-thinking-os-20250616.md
 785d9f08cc2b61c067f31dfc4dd2a5a59644f6a3ae7f0b8a2b4d1d2e2c4634b2    docs/papers/en/007-practical-knowledge-thinking-os-20250616.en.md
+
+7d18285e9b6558660f86a5d75569aaba1472daedd8cf511b6a96fbb84e25151b    docs/papers/ja_original/006-question-leap-integrated-practice-20250400.md
+3a894cc82fd8cbc343efdecc2949e158245cd7d5f6aa4d6a9f95953537ae6714    docs/papers/en/006-question-leap-integrated-practice-20250400.en.md
+
+
