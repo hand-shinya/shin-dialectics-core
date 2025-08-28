@@ -174,4 +174,14 @@
   "translation_of_sha256": "7d18285e9b6558660f86a5d75569aaba1472daedd8cf511b6a96fbb84e25151b"
 }
 
+{
+  "title": "第8回：シン・弁証法2.0：AI拡張弁証法統合システムの理論的基盤",
+  "first_published_jst": "2025-08-05",
+  "source_url": "",
+  "sha256_utf8": "85a38cd348fe2457d3a4b955495bbf6cf8e959f751b6d2c27273e0463647efb4",
+  "path": "docs/papers/ja_original/008-aad2-foundations-20250805.md",
+  "ingested_at_jst": "（コミット時点のJSTで可）",
+  "claim_ids": []
+}
+
 
