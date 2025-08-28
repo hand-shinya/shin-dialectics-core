@@ -25,4 +25,6 @@ c7c9b6a9daf51cd09a8c311c8b7d888c4d4b0b9e79a5f5d28e5f5f1b25f7a7b    docs/papers/j
 7d18285e9b6558660f86a5d75569aaba1472daedd8cf511b6a96fbb84e25151b    docs/papers/ja_original/006-question-leap-integrated-practice-20250400.md
 3a894cc82fd8cbc343efdecc2949e158245cd7d5f6aa4d6a9f95953537ae6714    docs/papers/en/006-question-leap-integrated-practice-20250400.en.md
 
+85a38cd348fe2457d3a4b955495bbf6cf8e959f751b6d2c27273e0463647efb4  docs/papers/ja_original/008-aad2-foundations-20250805.md
+321d3f6af0f1d947db8733153ad6d55ab6632003186dd75584a389369dc61016  docs/papers/en/008-aad2-foundations-20250805.en.md
 
