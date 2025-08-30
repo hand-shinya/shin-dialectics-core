@@ -1,64 +1,79 @@
-name: Compute release hashes (v2.0.1)
+name: Compute release hashes (generic)
 
 permissions:
   contents: write
   pull-requests: write
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag (e.g., v2.0.1)"
+        required: true
+        default: "v2.0.1"
 
 jobs:
   compute:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with: { fetch-depth: 0 }
+        with:
+          fetch-depth: 0
 
-      - name: Download archives (v2.0.1)
+      - name: Prepare
+        id: prep
         run: |
+          TAG="${{ github.event.inputs.tag }}"
+          echo "TAG=${TAG}" >> $GITHUB_OUTPUT
           mkdir -p _artifacts
-          curl -L -o _artifacts/source.zip    https://github.com/hand-shinya/shin-dialectics-core/archive/refs/tags/v2.0.1.zip
-          curl -L -o _artifacts/source.tar.gz https://github.com/hand-shinya/shin-dialectics-core/archive/refs/tags/v2.0.1.tar.gz
+
+      - name: Download archives
+        run: |
+          TAG="${{ steps.prep.outputs.TAG }}"
+          curl -L -o _artifacts/source.zip  "https://github.com/${{ github.repository }}/archive/refs/tags/${TAG}.zip"
+          curl -L -o _artifacts/source.tar.gz "https://github.com/${{ github.repository }}/archive/refs/tags/${TAG}.tar.gz"
 
       - name: Compute SHA256
         id: sha
         run: |
-          ZIP_SHA=$(sha256sum _artifacts/source.zip    | awk '{print $1}')
+          ZIP_SHA=$(sha256sum _artifacts/source.zip     | awk '{print $1}')
           TGZ_SHA=$(sha256sum _artifacts/source.tar.gz | awk '{print $1}')
-          echo "zip_sha=$ZIP_SHA" >> $GITHUB_OUTPUT
-          echo "tgz_sha=$TGZ_SHA" >> $GITHUB_OUTPUT
+          echo "zip_sha=${ZIP_SHA}" >> $GITHUB_OUTPUT
+          echo "tgz_sha=${TGZ_SHA}" >> $GITHUB_OUTPUT
           {
-            echo "### SHA256 (v2.0.1)"
-            echo "- source.tar.gz: $TGZ_SHA"
-            echo "- source.zip:    $ZIP_SHA"
-          } >> $GITHUB_STEP_SUMMARY
+            echo "## ${TAG}"
+            echo "SHA256  source.tar.gz  ${TGZ_SHA}"
+            echo "SHA256  source.zip     ${ZIP_SHA}"
+            echo
+          } > _block.txt
+          echo -e "source.tar.gz: ${TGZ_SHA}\nsource.zip:    ${ZIP_SHA}" >> $GITHUB_STEP_SUMMARY
 
-      - name: Update docs/HASHES.txt (replace v2.0.1 block)
+      - name: Update docs/HASHES.txt (replace existing block if any)
         run: |
+          TAG="${{ steps.prep.outputs.TAG }}"
           mkdir -p docs
           touch docs/HASHES.txt
-          awk 'BEGIN{p=1} /^# v2\.0\.1$/{p=0} /^# v/{if(!p){p=1;next}} p{print}' docs/HASHES.txt > docs/HASHES.txt.tmp || true
-          mv docs/HASHES.txt.tmp docs/HASHES.txt
-          {
-            echo "# v2.0.1"
-            echo "SHA256  source.tar.gz  ${{ steps.sha.outputs.tgz_sha }}"
-            echo "SHA256  source.zip     ${{ steps.sha.outputs.zip_sha }}"
-            echo
-          } >> docs/HASHES.txt
+          awk -v tag="^##[ ]+"$TAG'$' '
+            BEGIN{found=0}
+            { if($0 ~ tag){found=1}
+              if(found && $0 ~ /^##[ ]+v/) next
+              if(!found) print
+            }
+            END{}' docs/HASHES.txt > docs/HASHES.tmp || true
+          cat _block.txt >> docs/HASHES.tmp
+          mv docs/HASHES.tmp docs/HASHES.txt
+          rm -f _block.txt
 
-      - name: Create pull request
-        id: cpr
+      - name: Create PR
         uses: peter-evans/create-pull-request@v6
         with:
-          branch: chore/hashes-v2.0.1
-          base: main
-          title: "docs: add SHA256 hashes for v2.0.1 archives"
-          commit-message: "docs: add SHA256 hashes for v2.0.1 archives"
+          commit-message: "docs: add SHA256 hashes for ${{ steps.prep.outputs.TAG }} archives"
+          title: "docs: add SHA256 hashes for ${{ steps.prep.outputs.TAG }} archives"
           body: |
-            This PR adds SHA256 for v2.0.1:
+            This PR adds SHA256 for ${{ steps.prep.outputs.TAG }}:
+
             - source.tar.gz: ${{ steps.sha.outputs.tgz_sha }}
             - source.zip:    ${{ steps.sha.outputs.zip_sha }}
-
-      - name: Show PR link
-        if: ${{ steps.cpr.outputs.pull-request-url != '' }}
-        run: echo "PR: ${{ steps.cpr.outputs.pull-request-url }}" >> $GITHUB_STEP_SUMMARY
+          branch: "chore/hashes-${{ steps.prep.outputs.TAG }}"
+          base: "main"
+          labels: documentation
