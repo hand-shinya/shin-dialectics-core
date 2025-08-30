@@ -44,6 +44,15 @@
   "translation_of_sha256": "e07c52fdddd91eb5e2c3f9b5c604288635116a2324d86e096154cad7767549ea"
 },
 
+[2025-08-29 JST] Release v2.0.1 (technical re-release to register DOI)
+- Version DOI: 10.5281/zenodo.16992501
+- Concept DOI: 10.5281/zenodo.16992501
+- Tag: v2.0.1
+- Artifacts: source.tar.gz, source.zip
+- HASHES: see docs/HASHES.txt
+- Signature: (yes/no)
+
+
 {
   "title": "第3回：量子・多様体・複雑系が拓くAI拡張弁証法",
   "first_published_jst": "2025-03-13",
