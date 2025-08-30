@@ -1,0 +1,67 @@
+name: Compute release hashes (v2.0.1)
+
+on:
+  workflow_dispatch: {}          # 手動実行用
+  # 今後、自動化したければ下行を有効に
+  # release:
+  #   types: [published]
+
+jobs:
+  compute:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare workspace
+        run: mkdir -p _artifacts
+
+      - name: Download archives for v2.0.1
+        run: |
+          curl -L -o _artifacts/source.zip    https://github.com/hand-shinya/shin-dialectics-core/archive/refs/tags/v2.0.1.zip
+          curl -L -o _artifacts/source.tar.gz https://github.com/hand-shinya/shin-dialectics-core/archive/refs/tags/v2.0.1.tar.gz
+          ls -lh _artifacts
+
+      - name: Compute SHA256
+        id: sha
+        run: |
+          ZIP_SHA=$(sha256sum _artifacts/source.zip | awk '{print $1}')
+          TGZ_SHA=$(sha256sum _artifacts/source.tar.gz | awk '{print $1}')
+          echo "zip_sha=$ZIP_SHA" >> $GITHUB_OUTPUT
+          echo "tgz_sha=$TGZ_SHA" >> $GITHUB_OUTPUT
+
+      - name: Update docs/HASHES.txt
+        run: |
+          mkdir -p docs
+          # 既存内容を保持しつつ、同じバージョンの既存ブロックを削除してから追記
+          touch docs/HASHES.txt
+          awk 'BEGIN{p=1} /^# v2\.0\.1/{p=0} /^# v/{if(!p){p=1;next}} p{print}' docs/HASHES.txt > docs/HASHES.txt.tmp || true
+          mv docs/HASHES.txt.tmp docs/HASHES.txt
+          {
+            echo "# v2.0.1"
+            echo "SHA256  source.tar.gz  ${{ steps.sha.outputs.tgz_sha }}"
+            echo "SHA256  source.zip     ${{ steps.sha.outputs.zip_sha }}"
+            echo
+          } >> docs/HASHES.txt
+          tail -n +1 docs/HASHES.txt
+
+      - name: Commit changes (create branch)
+        run: |
+          BR=chore/hashes-v2.0.1
+          git config user.name  "automation"
+          git config user.email "noreply@users.noreply.github.com"
+          git checkout -b $BR
+          git add docs/HASHES.txt
+          git commit -m "docs: add SHA256 hashes for v2.0.1 archives"
+          git push -u origin $BR
+
+      - name: Open Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: chore/hashes-v2.0.1
+          title: "docs: add SHA256 hashes for v2.0.1 archives"
+          body: |
+            This PR adds SHA256 for v2.0.1:
+            - source.tar.gz
+            - source.zip
+          labels: documentation
