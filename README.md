@@ -1,4 +1,10 @@
 # Shin-Dialectics 2.0 — Core (Public Priority Release)
+
+[![DOI (version)](https://zenodo.org/badge/DOI/10.5281/zenodo.16992501.svg)](https://doi.org/10.5281/zenodo.16992501)
+<!-- 概念 DOI が判明後に下行を有効化して、上の直後に並べてください -->
+<!-- [![DOI (concept)](https://zenodo.org/badge/DOI/ZENODO_CONCEPT_DOI.svg)](https://doi.org/ZENODO_CONCEPT_DOI) -->
+
+
 **Tagline (EN)**: Generate many negations at once, trigger a phase change, land a synthesis.  
 **タグライン (JA)**: 複数否定を同時に生み、相転移を起こし、統合へ着地する。
 
@@ -57,4 +63,39 @@ See `CITATION.cff`.
 Short form: *Handa, S. (2025). Shin‑Dialectics 2.0 — Core (v2.0‑core) [Software].*
 
 ---
-*Last update: 2025-08-24*
+## How to cite
+
+Please cite the archived release as follows.
+
+- DOI (version): https://doi.org/10.5281/zenodo.16992501  
+- DOI (concept): https://doi.org/ZENODO_CONCEPT_DOI
+
+### BibTeX
+```bibtex
+@software{shin_dialectics_core_2_0_1,
+  title        = {Shin-Dialectics 2.0 — Core},
+  version      = {2.0.1},
+  doi          = {10.5281/zenodo.16992501},
+  url          = {https://github.com/hand-shinya/shin-dialectics-core},
+  year         = {2025},
+  month        = {8},
+  note         = {Concept DOI: ZENODO_CONCEPT_DOI}
+}
+
+
+> コミットメッセージ例：`docs: add DOI badges and citation block`
+
+---
+
+## ④ `docs/PRIORITY-LEDGER.md` に記録を追記
+**ファイル末尾へ**（そのまま貼付）:
+
+```markdown
+[2025-08-29 JST] Release v2.0.1 (technical re-release to register DOI)
+- Version DOI: 10.5281/zenodo.16992501
+- Concept DOI: ZENODO_CONCEPT_DOI
+- Tag: v2.0.1
+- Artifacts: source.tar.gz, source.zip
+- HASHES: see docs/HASHES.txt
+- Signature: (yes/no)
+
