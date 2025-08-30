@@ -12,10 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+        with: { fetch-depth: 0 }
 
-      - name: Download archives for v2.0.1
+      - name: Download archives (v2.0.1)
         run: |
           mkdir -p _artifacts
           curl -L -o _artifacts/source.zip    https://github.com/hand-shinya/shin-dialectics-core/archive/refs/tags/v2.0.1.zip
@@ -24,16 +23,20 @@ jobs:
       - name: Compute SHA256
         id: sha
         run: |
-          ZIP_SHA=$(sha256sum _artifacts/source.zip | awk '{print $1}')
+          ZIP_SHA=$(sha256sum _artifacts/source.zip    | awk '{print $1}')
           TGZ_SHA=$(sha256sum _artifacts/source.tar.gz | awk '{print $1}')
           echo "zip_sha=$ZIP_SHA" >> $GITHUB_OUTPUT
           echo "tgz_sha=$TGZ_SHA" >> $GITHUB_OUTPUT
+          {
+            echo "### SHA256 (v2.0.1)"
+            echo "- source.tar.gz: $TGZ_SHA"
+            echo "- source.zip:    $ZIP_SHA"
+          } >> $GITHUB_STEP_SUMMARY
 
-      - name: Update docs/HASHES.txt
+      - name: Update docs/HASHES.txt (replace v2.0.1 block)
         run: |
           mkdir -p docs
           touch docs/HASHES.txt
-          # 既存の v2.0.1 ブロックがあれば除去してから追記
           awk 'BEGIN{p=1} /^# v2\.0\.1$/{p=0} /^# v/{if(!p){p=1;next}} p{print}' docs/HASHES.txt > docs/HASHES.txt.tmp || true
           mv docs/HASHES.txt.tmp docs/HASHES.txt
           {
@@ -44,14 +47,18 @@ jobs:
           } >> docs/HASHES.txt
 
       - name: Create pull request
+        id: cpr
         uses: peter-evans/create-pull-request@v6
         with:
-          commit-message: "docs: add SHA256 hashes for v2.0.1 archives"
+          branch: chore/hashes-v2.0.1
+          base: main
           title: "docs: add SHA256 hashes for v2.0.1 archives"
+          commit-message: "docs: add SHA256 hashes for v2.0.1 archives"
           body: |
             This PR adds SHA256 for v2.0.1:
             - source.tar.gz: ${{ steps.sha.outputs.tgz_sha }}
             - source.zip:    ${{ steps.sha.outputs.zip_sha }}
-          branch: chore/hashes-v2.0.1
-          base: main
-          labels: documentation
+
+      - name: Show PR link
+        if: ${{ steps.cpr.outputs.pull-request-url != '' }}
+        run: echo "PR: ${{ steps.cpr.outputs.pull-request-url }}" >> $GITHUB_STEP_SUMMARY
