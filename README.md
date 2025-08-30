@@ -1,8 +1,8 @@
 # Shin-Dialectics 2.0 — Core (Public Priority Release)
 
 [![DOI (version)](https://zenodo.org/badge/DOI/10.5281/zenodo.16992501.svg)](https://doi.org/10.5281/zenodo.16992501)
-<!-- 概念 DOI が判明後に下行を有効化して、上の直後に並べてください -->
-<!-- [![DOI (concept)](https://zenodo.org/badge/DOI/ZENODO_CONCEPT_DOI.svg)](https://doi.org/ZENODO_CONCEPT_DOI) -->
+[![DOI (concept)](https://zenodo.org/badge/DOI/10.5281/zenodo.16992501.svg)](https://doi.org/10.5281/zenodo.16992501)
+
 
 
 **Tagline (EN)**: Generate many negations at once, trigger a phase change, land a synthesis.  
@@ -68,19 +68,40 @@ Short form: *Handa, S. (2025). Shin‑Dialectics 2.0 — Core (v2.0‑core) [Sof
 Please cite the archived release as follows.
 
 - DOI (version): https://doi.org/10.5281/zenodo.16992501  
-- DOI (concept): https://doi.org/ZENODO_CONCEPT_DOI
+- DOI (concept): https://doi.org/10.5281/zenodo.16992501
 
 ### BibTeX
 ```bibtex
 @software{shin_dialectics_core_2_0_1,
-  title        = {Shin-Dialectics 2.0 — Core},
-  version      = {2.0.1},
-  doi          = {10.5281/zenodo.16992501},
-  url          = {https://github.com/hand-shinya/shin-dialectics-core},
-  year         = {2025},
-  month        = {8},
-  note         = {Concept DOI: ZENODO_CONCEPT_DOI}
+  title   = {Shin-Dialectics 2.0 — Core},
+  version = {2.0.1},
+  doi     = {10.5281/zenodo.16992501},
+  url     = {https://github.com/hand-shinya/shin-dialectics-core},
+  year    = {2025},
+  month   = {8},
+  note    = {Concept DOI: 10.5281/zenodo.16992501}
 }
+
+
+---
+
+## 2) GitHub Release v2.0.1 本文（Edit→置換）
+```markdown
+## What’s included
+- Same contents as v2.0.0 (no code changes)
+- Core structure: /src, /implementations, /docs, /LICENSES
+- Single Source of Truth: src/specs/params.py
+- Operational records: docs/PRIORITY-LEDGER.md, docs/HASHES.txt
+- Theory refs: README.md (Layout, Concepts)
+
+## Provenance & Integrity
+- DOI (version-specific): https://doi.org/10.5281/zenodo.16992501
+- DOI (concept):          https://doi.org/10.5281/zenodo.16992501
+- Artifacts: source.tar.gz, source.zip
+- Checksums: see docs/HASHES.txt
+
+## Note
+Technical re-release to trigger Zenodo archiving (no content change vs v2.0.0).
 
 
 > コミットメッセージ例：`docs: add DOI badges and citation block`
@@ -94,6 +115,14 @@ Please cite the archived release as follows.
 [2025-08-29 JST] Release v2.0.1 (technical re-release to register DOI)
 - Version DOI: 10.5281/zenodo.16992501
 - Concept DOI: ZENODO_CONCEPT_DOI
+- Tag: v2.0.1
+- Artifacts: source.tar.gz, source.zip
+- HASHES: see docs/HASHES.txt
+- Signature: (yes/no)
+
+[2025-08-29 JST] Release v2.0.1 (technical re-release to register DOI)
+- Version DOI: 10.5281/zenodo.16992501
+- Concept DOI: 10.5281/zenodo.16992501
 - Tag: v2.0.1
 - Artifacts: source.tar.gz, source.zip
 - HASHES: see docs/HASHES.txt
