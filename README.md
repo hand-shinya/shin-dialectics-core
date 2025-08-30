@@ -83,43 +83,14 @@ Please cite the archived release as follows.
 }
 
 
----
-
-## 2) GitHub Release v2.0.1 本文（Edit→置換）
-```markdown
-## What’s included
-- Same contents as v2.0.0 (no code changes)
-- Core structure: /src, /implementations, /docs, /LICENSES
-- Single Source of Truth: src/specs/params.py
-- Operational records: docs/PRIORITY-LEDGER.md, docs/HASHES.txt
-- Theory refs: README.md (Layout, Concepts)
-
-## Provenance & Integrity
-- DOI (version-specific): https://doi.org/10.5281/zenodo.16992501
-- DOI (concept):          https://doi.org/10.5281/zenodo.16992501
-- Artifacts: source.tar.gz, source.zip
-- Checksums: see docs/HASHES.txt
-
-## Note
-Technical re-release to trigger Zenodo archiving (no content change vs v2.0.0).
-
-
-> コミットメッセージ例：`docs: add DOI badges and citation block`
+> 目的：開きっぱなしのコードフェンスを閉じ、README 内に紛れた「Release本文」や作業手順の文章を**丸ごと除去**します。上部の DOI バッジはそのままでOKです。
 
 ---
 
-## ④ `docs/PRIORITY-LEDGER.md` に記録を追記
-**ファイル末尾へ**（そのまま貼付）:
+# 2) docs/PRIORITY-LEDGER.md（重複とプレースホルダ除去）
+**該当ブロックだけ残し、プレースホルダ版と重複版を削除**します。最終的に、下記1ブロックだけがあれば十分です（末尾に配置）。
 
 ```markdown
-[2025-08-29 JST] Release v2.0.1 (technical re-release to register DOI)
-- Version DOI: 10.5281/zenodo.16992501
-- Concept DOI: ZENODO_CONCEPT_DOI
-- Tag: v2.0.1
-- Artifacts: source.tar.gz, source.zip
-- HASHES: see docs/HASHES.txt
-- Signature: (yes/no)
-
 [2025-08-29 JST] Release v2.0.1 (technical re-release to register DOI)
 - Version DOI: 10.5281/zenodo.16992501
 - Concept DOI: 10.5281/zenodo.16992501
@@ -127,4 +98,3 @@ Technical re-release to trigger Zenodo archiving (no content change vs v2.0.0).
 - Artifacts: source.tar.gz, source.zip
 - HASHES: see docs/HASHES.txt
 - Signature: (yes/no)
-
