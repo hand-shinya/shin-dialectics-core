@@ -1,14 +1,13 @@
-cff-version: 1.2.0
-message: "If you use this project, please cite it as below."
-type: software
+cff-version: "1.2.0"
+message: "If you use this software, please cite it as follows."
 title: "Shin-Dialectics 2.0 — Core"
-version: "2.0-core"
-date-released: "2025-08-24"
+version: "2.0.1"
+doi: "10.5281/zenodo.16992501"
+date-released: "2025-08-29"
+repository-code: "https://github.com/hand-shinya/shin-dialectics-core"
 authors:
   - family-names: "Handa"
     given-names: "Shinya"
-    email: "handa.shinya@gmail.com"
-    affiliation: "Independent Research"
 repository-code: "https://github.com/USER/REPO"  # replace after publishing
 license: "MIT"
 keywords:
