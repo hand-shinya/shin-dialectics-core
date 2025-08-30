@@ -8,11 +8,11 @@ repository-code: "https://github.com/hand-shinya/shin-dialectics-core"
 authors:
   - family-names: "Handa"
     given-names: "Shinya"
-repository-code: "https://github.com/USER/REPO"  # replace after publishing
 license: "MIT"
 keywords:
   - dialectics
   - prompting
-  - E2(n)
+  - "E2(n)"
   - lambda-thresholds
   - three-layer-prompting
+
