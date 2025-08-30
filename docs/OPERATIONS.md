@@ -1,106 +1,42 @@
-# Release Hashes Automation — Quick Guide
+# OPERATIONS — Release, DOI, Hashes (Shin-Dialectics Core)
 
-## 目的
+## 0. 前提
+- Zenodo 連携：GitHub → Zenodo で **Publish releases to Zenodo** を ON（済）。
+- Repository → Settings → Actions → **Workflow permissions** = *Read and write*（済）。
 
-GitHub のリリース（例：`v2.0.1`）で配布される `source.tar.gz` / `source.zip` の **SHA256** を自動計算し、`docs/HASHES.txt` に記録する。改ざん検出と再現性を保証する。
+## 1. リリース
+1) GitHub の **Releases** で `vX.Y.Z` を作成（source.zip/tar.gz は自動添付）。  
+2) Release notes は雛形：
+   - What’s included / Provenance & Integrity / Note
+   - DOI（version, concept）は Zenodo 公開後に追記・更新可。
 
-## セットアップ（リポジトリに既設）
+## 2. ハッシュ（自動）
+1) **Actions → Compute release hashes (generic)** を開く。  
+2) `tag` に `vX.Y.Z` を入力し **Run workflow**。  
+3) 自動で PR 「docs: add SHA256 hashes for vX.Y.Z archives」が作成される。  
+4) 内容を確認し **Merge**。  
+   - `docs/HASHES.txt` に `## vX.Y.Z` ブロックが追加（既存ブロックがあれば置換）。
 
-* ワークフロー: `.github/workflows/release-hashes.yml`
+## 3. DOI / 引用
+- 概念 DOI（Concept）: **10.5281/zenodo.16992501**（固定）。  
+- バージョン DOI：Zenodo のリリースページ右上に表示（発行ごとに異なる）。  
+- 反映先：
+  - `README.md` → バッジ＆「How to cite」  
+  - `CITATION.cff` → `doi`, `version`, `date-released`  
+  - `docs/PRIORITY-LEDGER.md` → Release ログ（1行ブロック）
 
-  * 実行名: **Compute release hashes (v2.0.1)**
-  * 出力: ① `docs/HASHES.txt` への追記、② PR（タイトル: `docs: add SHA256 hashes for v2.0.1 archives`）
+## 4. 変更の最小セット（新リリースごと）
+- `README.md`：How to cite の DOI（version）を新しいものに差し替え。  
+- `CITATION.cff`：`version` と `date-released` を更新、`doi` に **version DOI** を設定。  
+- `docs/PRIORITY-LEDGER.md`：JST タイムスタンプで 1 ブロック追記。  
+- **Hashes**：本ワークフローを実行し PR を merge。
 
-> 権限設定（既設前提）
-> Settings → Actions → **Workflow permissions** = *Read and write*、
-> **Allow GitHub Actions to create and approve pull requests** = ON
+## 5. 検証
+- Releases ページ：DOI 表示／Assets（zip/tar.gz）／本文。  
+- `docs/HASHES.txt`：対象タグの SHA256 が存在。  
+- `README.md`：コードフェンス閉じ忘れなし。  
+- `CITATION.cff`：`repository-code` のプレースホルダ無し。
 
-## 使い方（毎回の手順）
-
-1. GitHub → **Actions** → **Compute release hashes (v2.0.1)** → **Run workflow**。
-2. 実行完了後、**Pull requests** を開く。
-   PR タイトル **“docs: add SHA256 hashes for v2.0.1 archives”** を開き、**Merge pull request → Confirm merge**。
-   （ブランチ保護で止まる場合は、一時的に承認/必須チェックを緩め、マージ後に元へ戻す）
-3. 検証：`docs/HASHES.txt` に以下形式のブロックが存在することを確認。
-
-   ```
-   # v2.0.1
-   SHA256  source.tar.gz  <64桁>
-   SHA256  source.zip     <64桁>
-   ```
-
-## よくある詰まり所
-
-* **Run ボタンが見えない**: 実行詳細ページではなく、左ペインのワークフロー名（Compute…）のトップに戻る。
-* **PRが作成されない**: 上記の **Workflow permissions** と **Allow … PRs** を再確認。
-* **main にマージできない**: Branch protection のレビュー/チェック要件を満たす（または一時的に緩和）。
-
-## 次のリリースに適用（タグ更新）
-
-* `.github/workflows/release-hashes.yml` 内の `v2.0.1` を新タグ（例：`v2.0.2`）に置換し、コミット。
-* 以降の手順は同じ（Run → PR → Merge）。
-
----
-
-### （任意）改良版：タグを入力して実行
-
-固定タグを編集したくない場合は、下記のパラメータ化版に置き換える。実行時に `tag` を入力する。
-
-```yaml
-name: Compute release hashes (by tag)
-permissions: { contents: write, pull-requests: write }
-on:
-  workflow_dispatch:
-    inputs:
-      tag:
-        description: 'Git tag (e.g., v2.0.1)'
-        required: true
-        type: string
-jobs:
-  compute:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with: { fetch-depth: 0 }
-      - name: Download archives
-        run: |
-          mkdir -p _artifacts
-          curl -L -o _artifacts/source.zip    "https://github.com/${{ github.repository }}/archive/refs/tags/${{ inputs.tag }}.zip"
-          curl -L -o _artifacts/source.tar.gz "https://github.com/${{ github.repository }}/archive/refs/tags/${{ inputs.tag }}.tar.gz"
-      - name: Compute SHA256
-        id: sha
-        run: |
-          ZIP_SHA=$(sha256sum _artifacts/source.zip    | awk '{print $1}')
-          TGZ_SHA=$(sha256sum _artifacts/source.tar.gz | awk '{print $1}')
-          echo "zip_sha=$ZIP_SHA" >> $GITHUB_OUTPUT
-          echo "tgz_sha=$TGZ_SHA" >> $GITHUB_OUTPUT
-      - name: Update docs/HASHES.txt (replace same-tag block)
-        run: |
-          mkdir -p docs
-          touch docs/HASHES.txt
-          TAG_ESC=$(printf "%s" "${{ inputs.tag }}" | sed 's/[.[\()*^$]/\\&/g')
-          awk -v tag="$TAG_ESC" 'BEGIN{p=1} $0=="# "tag{p=0} /^# v/{if(!p){p=1;next}} p{print}' docs/HASHES.txt > docs/HASHES.txt.tmp || true
-          mv docs/HASHES.txt.tmp docs/HASHES.txt
-          {
-            echo "# ${{ inputs.tag }}"
-            echo "SHA256  source.tar.gz  ${{ steps.sha.outputs.tgz_sha }}"
-            echo "SHA256  source.zip     ${{ steps.sha.outputs.zip_sha }}"
-            echo
-          } >> docs/HASHES.txt
-      - uses: peter-evans/create-pull-request@v6
-        with:
-          branch: "chore/hashes-${{ inputs.tag }}"
-          base: main
-          title: "docs: add SHA256 hashes for ${{ inputs.tag }} archives"
-          commit-message: "docs: add SHA256 hashes for ${{ inputs.tag }} archives"
-          body: |
-            SHA256 for ${{ inputs.tag }}:
-            - source.tar.gz: ${{ steps.sha.outputs.tgz_sha }}
-            - source.zip:    ${{ steps.sha.outputs.zip_sha }}
-```
-
-**実行方法**: Actions → *Compute release hashes (by tag)* → **Run workflow** → `tag` に `vX.Y.Z` を入力 → 実行 → 生成PRをマージ。
-
----
-
-以上。これで、プロジェクトを知らない担当者でも、**目的・場所・操作・結果・次回の更新**が一読で分かり、ハッシュ記録を確実に運用できます。
+## 付記（任意改善）
+- ORCID 追加：`CITATION.cff` の `authors` に `orcid:` を追記可。  
+- リリース署名：`docs/HASHES.txt` の「Signature」を運用ポリシーに合わせて記入。
