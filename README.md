@@ -3,24 +3,22 @@
 [![DOI (version)](https://zenodo.org/badge/DOI/10.5281/zenodo.16992501.svg)](https://doi.org/10.5281/zenodo.16992501)
 [![DOI (concept)](https://zenodo.org/badge/DOI/10.5281/zenodo.16992501.svg)](https://doi.org/10.5281/zenodo.16992501)
 
-
-
 **Tagline (EN)**: Generate many negations at once, trigger a phase change, land a synthesis.  
 **タグライン (JA)**: 複数否定を同時に生み、相転移を起こし、統合へ着地する。
 
-This repository is the **canonical, lean, and verifiable** publication of **Shin‑Dialectics 2.0**.  
+This repository is the **canonical, lean, and verifiable** publication of **Shin-Dialectics 2.0**.  
 It exists to: **(1) record priority (先取権)**, **(2) enable permissive reuse**, and **(3) provide minimal runnable tools and schemas**.
 
 ---
 
 ## Core ideas / 核心
 - **Simultaneous Multiple Negation, E₂(n)** — generate many antitheses at once across diverse observation axes:  
-  \[ E_2(n) = \{ g_i(E_1, A_i, C) \}_{i=1..n} \]
+  \[ E_2(n) = \{ g_i(E_1, A_i, C) \}_{i=1..n} \]  
   内在的否定[i]と外在的否定[e]を並列生成し、**創造的緊張**を最大化する。
 - **Quantity→Quality thresholds (λₚ/λₐ/λₛ/λᵢ)** — when counts and structure cross operational cutoffs, the system reorganizes toward synthesis.
-- **Three‑layer closed loop** — *Language* ↔ *Math/Functions* ↔ *Code*, governed by **τ (stop criteria)** and **U (uncertainty budget)**.
-- **Quantum‑mode sketch** — \(|ψ⟩ = α|T⟩ + Σ_i β_i|A_i⟩ + Σ_j γ_j|S_j⟩\) captures delayed commitment and superposition over alternatives.
-- **Manifold metaphor** — high‑curvature regions in the “concept manifold” map to creative tension hot‑spots.
+- **Three-layer closed loop** — *Language* ↔ *Math/Functions* ↔ *Code*, governed by **τ (stop criteria)** and **U (uncertainty budget)**.
+- **Quantum-mode sketch** — \(|ψ⟩ = α|T⟩ + Σ_i β_i|A_i⟩ + Σ_j γ_j|S_j⟩\) captures delayed commitment and superposition over alternatives.
+- **Manifold metaphor** — high-curvature regions in the “concept manifold” map to creative tension hot-spots.
 
 > Single source of truth for parameters: `src/specs/params.py` — λ/τ/U and default axes/stances are defined **once** and reused by tools, prompts, and schemas.
 
@@ -51,7 +49,7 @@ python src/tools/threshold_monitor.py --thesis "AI in secondary education" --lam
 ```
 
 ## Priority (先取権)
-- Primary evidence: `docs/PRIORITY-LEDGER.md` (JST timeline) + SHA‑256 workflow in `docs/HASHES.txt`.  
+- Primary evidence: `docs/PRIORITY-LEDGER.md` (JST timeline) + SHA-256 workflow in `docs/HASHES.txt`.  
 - For Japanese originals: place under `docs/papers/ja_original/` then run `build_index.py` to get ASCII copies and hashes recorded in `INDEX.csv`.
 
 ## License
@@ -60,9 +58,10 @@ python src/tools/threshold_monitor.py --thesis "AI in secondary education" --lam
 
 ## Cite
 See `CITATION.cff`.  
-Short form: *Handa, S. (2025). Shin‑Dialectics 2.0 — Core (v2.0‑core) [Software].*
+Short form: *Handa, S. (2025). Shin-Dialectics 2.0 — Core (v2.0-core) [Software].*
 
 ---
+
 ## How to cite
 
 Please cite the archived release as follows.
@@ -81,20 +80,4 @@ Please cite the archived release as follows.
   month   = {8},
   note    = {Concept DOI: 10.5281/zenodo.16992501}
 }
-
-
-> 目的：開きっぱなしのコードフェンスを閉じ、README 内に紛れた「Release本文」や作業手順の文章を**丸ごと除去**します。上部の DOI バッジはそのままでOKです。
-
----
-
-# 2) docs/PRIORITY-LEDGER.md（重複とプレースホルダ除去）
-**該当ブロックだけ残し、プレースホルダ版と重複版を削除**します。最終的に、下記1ブロックだけがあれば十分です（末尾に配置）。
-
-```markdown
-[2025-08-29 JST] Release v2.0.1 (technical re-release to register DOI)
-- Version DOI: 10.5281/zenodo.16992501
-- Concept DOI: 10.5281/zenodo.16992501
-- Tag: v2.0.1
-- Artifacts: source.tar.gz, source.zip
-- HASHES: see docs/HASHES.txt
-- Signature: (yes/no)
+```
